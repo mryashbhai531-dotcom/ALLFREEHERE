@@ -252,6 +252,23 @@
                             <input type="file" id="new-video-file-upload" accept="video/*" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3">
                             <button id="add-video-btn" class="mt-3 px-6 py-2 btn-premium w-full">Add Video</button>
                         </div>
+                        <hr class="my-6 border-gray-700">
+                        <h4 class="text-xl font-semibold mb-4 text-orange-500">Remove Anime Content</h4>
+                        <div class="mb-4">
+                            <select id="select-anime-to-remove" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600"></select>
+                            <button id="remove-anime-btn" class="mt-3 px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl w-full">Remove Anime</button>
+                        </div>
+                        <div class="mb-4">
+                            <select id="select-anime-for-season-removal" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600" onchange="updateAnimeSeasonsForRemoval()"></select>
+                            <select id="select-anime-season-to-remove" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3"></select>
+                            <button id="remove-anime-season-btn" class="mt-3 px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl w-full">Remove Season</button>
+                        </div>
+                        <div>
+                            <select id="select-anime-for-video-removal" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600" onchange="updateAnimeVideosForRemoval()"></select>
+                            <select id="select-anime-season-for-video-removal" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3" onchange="updateAnimeVideosForRemoval()"></select>
+                            <select id="select-anime-video-to-remove" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3"></select>
+                            <button id="remove-anime-video-btn" class="mt-3 px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl w-full">Remove Video</button>
+                        </div>
                     </div>
                     <!-- Manga Section -->
                     <div class="card p-6 rounded-xl">
@@ -272,6 +289,23 @@
                             <input type="url" id="new-page-link" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3" placeholder="Page Link (Image/PDF URL)">
                             <input type="file" id="new-page-file-upload" accept="image/*,application/pdf" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3">
                             <button id="add-page-btn" class="mt-3 px-6 py-2 btn-premium w-full">Add Page/PDF</button>
+                        </div>
+                        <hr class="my-6 border-gray-700">
+                        <h4 class="text-xl font-semibold mb-4 text-green-500">Remove Manga Content</h4>
+                        <div class="mb-4">
+                            <select id="select-manga-to-remove" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600"></select>
+                            <button id="remove-manga-btn" class="mt-3 px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl w-full">Remove Manga</button>
+                        </div>
+                        <div class="mb-4">
+                            <select id="select-manga-for-chapter-removal" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600" onchange="updateMangaChaptersForRemoval()"></select>
+                            <select id="select-manga-chapter-to-remove" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3"></select>
+                            <button id="remove-manga-chapter-btn" class="mt-3 px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl w-full">Remove Chapter</button>
+                        </div>
+                        <div>
+                            <select id="select-manga-for-page-removal" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600" onchange="updateMangaPagesForRemoval()"></select>
+                            <select id="select-manga-chapter-for-page-removal" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3" onchange="updateMangaPagesForRemoval()"></select>
+                            <select id="select-manga-page-to-remove" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3"></select>
+                            <button id="remove-manga-page-btn" class="mt-3 px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl w-full">Remove Page/PDF</button>
                         </div>
                     </div>
                     <!-- Manhwa Section -->
@@ -294,6 +328,23 @@
                             <input type="file" id="new-manhwa-page-file-upload" accept="image/*,application/pdf" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3">
                             <button id="add-manhwa-page-btn" class="mt-3 px-6 py-2 btn-premium w-full">Add Page/PDF</button>
                         </div>
+                        <hr class="my-6 border-gray-700">
+                        <h4 class="text-xl font-semibold mb-4 text-purple-500">Remove Manhwa Content</h4>
+                        <div class="mb-4">
+                            <select id="select-manhwa-to-remove" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600"></select>
+                            <button id="remove-manhwa-btn" class="mt-3 px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl w-full">Remove Manhwa</button>
+                        </div>
+                        <div class="mb-4">
+                            <select id="select-manhwa-for-chapter-removal" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600" onchange="updateManhwaChaptersForRemoval()"></select>
+                            <select id="select-manhwa-chapter-to-remove" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3"></select>
+                            <button id="remove-manhwa-chapter-btn" class="mt-3 px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl w-full">Remove Chapter</button>
+                        </div>
+                        <div>
+                            <select id="select-manhwa-for-page-removal" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600" onchange="updateManhwaPagesForRemoval()"></select>
+                            <select id="select-manhwa-chapter-for-page-removal" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3" onchange="updateManhwaPagesForRemoval()"></select>
+                            <select id="select-manhwa-page-to-remove" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3"></select>
+                            <button id="remove-manhwa-page-btn" class="mt-3 px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl w-full">Remove Page/PDF</button>
+                        </div>
                     </div>
                     <!-- Movies Section -->
                     <div class="card p-6 rounded-xl">
@@ -308,6 +359,17 @@
                             <input type="url" id="new-movie-video-link" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3" placeholder="Movie Video Link (YouTube URL)">
                             <input type="file" id="new-movie-video-file-upload" accept="video/*" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3">
                             <button id="add-movie-video-btn" class="mt-3 px-6 py-2 btn-premium w-full">Add Movie Video</button>
+                        </div>
+                        <hr class="my-6 border-gray-700">
+                        <h4 class="text-xl font-semibold mb-4 text-blue-500">Remove Movie Content</h4>
+                        <div class="mb-4">
+                            <select id="select-movie-to-remove" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600"></select>
+                            <button id="remove-movie-btn" class="mt-3 px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl w-full">Remove Movie</button>
+                        </div>
+                        <div>
+                            <select id="select-movie-for-video-removal" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600" onchange="updateMovieVideosForRemoval()"></select>
+                            <select id="select-movie-video-to-remove" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 mt-3"></select>
+                            <button id="remove-movie-video-btn" class="mt-3 px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl w-full">Remove Movie Video</button>
                         </div>
                     </div>
                 </div>
@@ -698,7 +760,7 @@
         };
 
         function loadAdminLists() {
-            // Anime Selects
+            // Anime Selects (Add)
             const selectAnimeForSeason = document.getElementById('select-anime-for-season');
             const selectAnimeForVideo = document.getElementById('select-anime-for-video');
             selectAnimeForSeason.innerHTML = '<option value="">Select Anime</option>';
@@ -716,7 +778,34 @@
             });
             updateAnimeSeasons(); // Initialize season dropdown for video
 
-            // Manga Selects
+            // Anime Selects (Remove)
+            const selectAnimeToRemove = document.getElementById('select-anime-to-remove');
+            const selectAnimeForSeasonRemoval = document.getElementById('select-anime-for-season-removal');
+            const selectAnimeForVideoRemoval = document.getElementById('select-anime-for-video-removal');
+            selectAnimeToRemove.innerHTML = '<option value="">Select Anime</option>';
+            selectAnimeForSeasonRemoval.innerHTML = '<option value="">Select Anime</option>';
+            selectAnimeForVideoRemoval.innerHTML = '<option value="">Select Anime</option>';
+            animes.forEach(anime => {
+                const option1 = document.createElement('option');
+                option1.value = anime.id;
+                option1.textContent = anime.name;
+                selectAnimeToRemove.appendChild(option1);
+
+                const option2 = document.createElement('option');
+                option2.value = anime.id;
+                option2.textContent = anime.name;
+                selectAnimeForSeasonRemoval.appendChild(option2);
+
+                const option3 = document.createElement('option');
+                option3.value = anime.id;
+                option3.textContent = anime.name;
+                selectAnimeForVideoRemoval.appendChild(option3);
+            });
+            updateAnimeSeasonsForRemoval();
+            updateAnimeVideosForRemoval();
+
+
+            // Manga Selects (Add)
             const selectMangaForChapter = document.getElementById('select-manga-for-chapter');
             const selectMangaForPage = document.getElementById('select-manga-for-page');
             selectMangaForChapter.innerHTML = '<option value="">Select Manga</option>';
@@ -734,7 +823,34 @@
             });
             updateMangaChapters(); // Initialize chapter dropdown for page
 
-            // Manhwa Selects
+            // Manga Selects (Remove)
+            const selectMangaToRemove = document.getElementById('select-manga-to-remove');
+            const selectMangaForChapterRemoval = document.getElementById('select-manga-for-chapter-removal');
+            const selectMangaForPageRemoval = document.getElementById('select-manga-for-page-removal');
+            selectMangaToRemove.innerHTML = '<option value="">Select Manga</option>';
+            selectMangaForChapterRemoval.innerHTML = '<option value="">Select Manga</option>';
+            selectMangaForPageRemoval.innerHTML = '<option value="">Select Manga</option>';
+            mangas.forEach(manga => {
+                const option1 = document.createElement('option');
+                option1.value = manga.id;
+                option1.textContent = manga.name;
+                selectMangaToRemove.appendChild(option1);
+
+                const option2 = document.createElement('option');
+                option2.value = manga.id;
+                option2.textContent = manga.name;
+                selectMangaForChapterRemoval.appendChild(option2);
+
+                const option3 = document.createElement('option');
+                option3.value = manga.id;
+                option3.textContent = manga.name;
+                selectMangaForPageRemoval.appendChild(option3);
+            });
+            updateMangaChaptersForRemoval();
+            updateMangaPagesForRemoval();
+
+
+            // Manhwa Selects (Add)
             const selectManhwaForChapter = document.getElementById('select-manhwa-for-chapter');
             const selectManhwaForPage = document.getElementById('select-manhwa-for-page');
             selectManhwaForChapter.innerHTML = '<option value="">Select Manhwa</option>';
@@ -752,7 +868,34 @@
             });
             updateManhwaChapters(); // Initialize chapter dropdown for page
 
-            // Movies Selects
+            // Manhwa Selects (Remove)
+            const selectManhwaToRemove = document.getElementById('select-manhwa-to-remove');
+            const selectManhwaForChapterRemoval = document.getElementById('select-manhwa-for-chapter-removal');
+            const selectManhwaForPageRemoval = document.getElementById('select-manhwa-for-page-removal');
+            selectManhwaToRemove.innerHTML = '<option value="">Select Manhwa</option>';
+            selectManhwaForChapterRemoval.innerHTML = '<option value="">Select Manhwa</option>';
+            selectManhwaForPageRemoval.innerHTML = '<option value="">Select Manhwa</option>';
+            manhwas.forEach(manhwa => {
+                const option1 = document.createElement('option');
+                option1.value = manhwa.id;
+                option1.textContent = manhwa.name;
+                selectManhwaToRemove.appendChild(option1);
+
+                const option2 = document.createElement('option');
+                option2.value = manhwa.id;
+                option2.textContent = manhwa.name;
+                selectManhwaForChapterRemoval.appendChild(option2);
+
+                const option3 = document.createElement('option');
+                option3.value = manhwa.id;
+                option3.textContent = manhwa.name;
+                selectManhwaForPageRemoval.appendChild(option3);
+            });
+            updateManhwaChaptersForRemoval();
+            updateManhwaPagesForRemoval();
+
+
+            // Movies Selects (Add)
             const selectMovieForVideo = document.getElementById('select-movie-for-video');
             selectMovieForVideo.innerHTML = '<option value="">Select Movie</option>';
             movies.forEach(movie => {
@@ -761,8 +904,27 @@
                 option.textContent = movie.name;
                 selectMovieForVideo.appendChild(option);
             });
+
+            // Movies Selects (Remove)
+            const selectMovieToRemove = document.getElementById('select-movie-to-remove');
+            const selectMovieForVideoRemoval = document.getElementById('select-movie-for-video-removal');
+            selectMovieToRemove.innerHTML = '<option value="">Select Movie</option>';
+            selectMovieForVideoRemoval.innerHTML = '<option value="">Select Movie</option>';
+            movies.forEach(movie => {
+                const option1 = document.createElement('option');
+                option1.value = movie.id;
+                option1.textContent = movie.name;
+                selectMovieToRemove.appendChild(option1);
+
+                const option2 = document.createElement('option');
+                option2.value = movie.id;
+                option2.textContent = movie.name;
+                selectMovieForVideoRemoval.appendChild(option2);
+            });
+            updateMovieVideosForRemoval();
         }
 
+        // Update functions for Add sections
         function updateAnimeSeasons() {
             const selectedAnimeId = document.getElementById('select-anime-for-video').value;
             const selectAnimeSeasonForVideo = document.getElementById('select-anime-season-for-video');
@@ -817,7 +979,147 @@
             }
         }
 
-        // Add event listeners for admin buttons
+        // Update functions for Remove sections
+        function updateAnimeSeasonsForRemoval() {
+            const selectedAnimeId = document.getElementById('select-anime-for-season-removal').value;
+            const selectAnimeSeasonToRemove = document.getElementById('select-anime-season-to-remove');
+            selectAnimeSeasonToRemove.innerHTML = '<option value="">Select Season</option>';
+
+            if (selectedAnimeId) {
+                const selectedAnime = animes.find(anime => anime.id === selectedAnimeId);
+                if (selectedAnime && selectedAnime.seasons) {
+                    selectedAnime.seasons.forEach(season => {
+                        const option = document.createElement('option');
+                        option.value = season.id;
+                        option.textContent = season.name;
+                        selectAnimeSeasonToRemove.appendChild(option);
+                    });
+                }
+            }
+        }
+
+        function updateAnimeVideosForRemoval() {
+            const selectedAnimeId = document.getElementById('select-anime-for-video-removal').value;
+            const selectedSeasonId = document.getElementById('select-anime-season-for-video-removal').value;
+            const selectAnimeVideoToRemove = document.getElementById('select-anime-video-to-remove');
+            selectAnimeVideoToRemove.innerHTML = '<option value="">Select Video</option>';
+
+            if (selectedAnimeId && selectedSeasonId) {
+                const selectedAnime = animes.find(anime => anime.id === selectedAnimeId);
+                if (selectedAnime) {
+                    const selectedSeason = selectedAnime.seasons.find(season => season.id === selectedSeasonId);
+                    if (selectedSeason && selectedSeason.videos) {
+                        selectedSeason.videos.forEach((video, index) => {
+                            const option = document.createElement('option');
+                            option.value = video; // Use video URL as value
+                            option.textContent = `Video ${index + 1}`;
+                            selectAnimeVideoToRemove.appendChild(option);
+                        });
+                    }
+                }
+            }
+        }
+
+        function updateMangaChaptersForRemoval() {
+            const selectedMangaId = document.getElementById('select-manga-for-chapter-removal').value;
+            const selectMangaChapterToRemove = document.getElementById('select-manga-chapter-to-remove');
+            selectMangaChapterToRemove.innerHTML = '<option value="">Select Chapter</option>';
+
+            if (selectedMangaId) {
+                const selectedManga = mangas.find(manga => manga.id === selectedMangaId);
+                if (selectedManga && selectedManga.chapters) {
+                    selectedManga.chapters.forEach(chapter => {
+                        const option = document.createElement('option');
+                        option.value = chapter.id;
+                        option.textContent = chapter.name;
+                        selectMangaChapterToRemove.appendChild(option);
+                    });
+                }
+            }
+        }
+
+        function updateMangaPagesForRemoval() {
+            const selectedMangaId = document.getElementById('select-manga-for-page-removal').value;
+            const selectedChapterId = document.getElementById('select-manga-chapter-for-page-removal').value;
+            const selectMangaPageToRemove = document.getElementById('select-manga-page-to-remove');
+            selectMangaPageToRemove.innerHTML = '<option value="">Select Page/PDF</option>';
+
+            if (selectedMangaId && selectedChapterId) {
+                const selectedManga = mangas.find(manga => manga.id === selectedMangaId);
+                if (selectedManga) {
+                    const selectedChapter = selectedManga.chapters.find(chapter => chapter.id === selectedChapterId);
+                    if (selectedChapter && selectedChapter.pages) {
+                        selectedChapter.pages.forEach((page, index) => {
+                            const option = document.createElement('option');
+                            option.value = page; // Use page URL as value
+                            option.textContent = `Page ${index + 1}`;
+                            selectMangaPageToRemove.appendChild(option);
+                        });
+                    }
+                }
+            }
+        }
+
+        function updateManhwaChaptersForRemoval() {
+            const selectedManhwaId = document.getElementById('select-manhwa-for-chapter-removal').value;
+            const selectManhwaChapterToRemove = document.getElementById('select-manhwa-chapter-to-remove');
+            selectManhwaChapterToRemove.innerHTML = '<option value="">Select Chapter</option>';
+
+            if (selectedManhwaId) {
+                const selectedManhwa = manhwas.find(manhwa => manhwa.id === selectedManhwaId);
+                if (selectedManhwa && selectedManhwa.chapters) {
+                    selectedManhwa.chapters.forEach(chapter => {
+                        const option = document.createElement('option');
+                        option.value = chapter.id;
+                        option.textContent = chapter.name;
+                        selectManhwaChapterToRemove.appendChild(option);
+                    });
+                }
+            }
+        }
+
+        function updateManhwaPagesForRemoval() {
+            const selectedManhwaId = document.getElementById('select-manhwa-for-page-removal').value;
+            const selectedChapterId = document.getElementById('select-manhwa-chapter-for-page-removal').value;
+            const selectManhwaPageToRemove = document.getElementById('select-manhwa-page-to-remove');
+            selectManhwaPageToRemove.innerHTML = '<option value="">Select Page/PDF</option>';
+
+            if (selectedManhwaId && selectedChapterId) {
+                const selectedManhwa = manhwas.find(manhwa => manhwa.id === selectedManhwaId);
+                if (selectedManhwa) {
+                    const selectedChapter = selectedManhwa.chapters.find(chapter => chapter.id === selectedChapterId);
+                    if (selectedChapter && selectedChapter.pages) {
+                        selectedChapter.pages.forEach((page, index) => {
+                            const option = document.createElement('option');
+                            option.value = page; // Use page URL as value
+                            option.textContent = `Page ${index + 1}`;
+                            selectManhwaPageToRemove.appendChild(option);
+                        });
+                    }
+                }
+            }
+        }
+
+        function updateMovieVideosForRemoval() {
+            const selectedMovieId = document.getElementById('select-movie-for-video-removal').value;
+            const selectMovieVideoToRemove = document.getElementById('select-movie-video-to-remove');
+            selectMovieVideoToRemove.innerHTML = '<option value="">Select Video</option>';
+
+            if (selectedMovieId) {
+                const selectedMovie = movies.find(movie => movie.id === selectedMovieId);
+                if (selectedMovie && selectedMovie.videos) {
+                    selectedMovie.videos.forEach((video, index) => {
+                        const option = document.createElement('option');
+                        option.value = video; // Use video URL as value
+                        option.textContent = `Video ${index + 1}`;
+                        selectMovieVideoToRemove.appendChild(option);
+                    });
+                }
+            }
+        }
+
+
+        // Add event listeners for admin buttons (Add)
         document.getElementById('add-anime-btn').onclick = async () => {
             const name = document.getElementById('new-anime-name').value.trim();
             const imageFile = document.getElementById('new-anime-image-upload').files[0];
@@ -1042,6 +1344,190 @@
             }
         };
 
+        // Add event listeners for admin buttons (Remove)
+        document.getElementById('remove-anime-btn').onclick = () => {
+            const animeId = document.getElementById('select-anime-to-remove').value;
+            if (animeId) {
+                if (confirm('Are you sure you want to remove this anime and all its seasons/videos?')) {
+                    animes = animes.filter(anime => anime.id !== animeId);
+                    saveAndReload();
+                    alert('Anime removed successfully!');
+                }
+            } else {
+                alert('Please select an anime to remove.');
+            }
+        };
+
+        document.getElementById('remove-anime-season-btn').onclick = () => {
+            const animeId = document.getElementById('select-anime-for-season-removal').value;
+            const seasonId = document.getElementById('select-anime-season-to-remove').value;
+            if (animeId && seasonId) {
+                if (confirm('Are you sure you want to remove this season and all its videos?')) {
+                    const anime = animes.find(a => a.id === animeId);
+                    if (anime) {
+                        anime.seasons = anime.seasons.filter(season => season.id !== seasonId);
+                        saveAndReload();
+                        alert('Season removed successfully!');
+                    }
+                }
+            } else {
+                alert('Please select an anime and a season to remove.');
+            }
+        };
+
+        document.getElementById('remove-anime-video-btn').onclick = () => {
+            const animeId = document.getElementById('select-anime-for-video-removal').value;
+            const seasonId = document.getElementById('select-anime-season-for-video-removal').value;
+            const videoUrl = document.getElementById('select-anime-video-to-remove').value;
+            if (animeId && seasonId && videoUrl) {
+                if (confirm('Are you sure you want to remove this video?')) {
+                    const anime = animes.find(a => a.id === animeId);
+                    if (anime) {
+                        const season = anime.seasons.find(s => s.id === seasonId);
+                        if (season) {
+                            season.videos = season.videos.filter(video => video !== videoUrl);
+                            saveAndReload();
+                            alert('Video removed successfully!');
+                        }
+                    }
+                }
+            } else {
+                alert('Please select an anime, season, and video to remove.');
+            }
+        };
+
+        document.getElementById('remove-manga-btn').onclick = () => {
+            const mangaId = document.getElementById('select-manga-to-remove').value;
+            if (mangaId) {
+                if (confirm('Are you sure you want to remove this manga and all its chapters/pages?')) {
+                    mangas = mangas.filter(manga => manga.id !== mangaId);
+                    saveAndReload();
+                    alert('Manga removed successfully!');
+                }
+            } else {
+                alert('Please select a manga to remove.');
+            }
+        };
+
+        document.getElementById('remove-manga-chapter-btn').onclick = () => {
+            const mangaId = document.getElementById('select-manga-for-chapter-removal').value;
+            const chapterId = document.getElementById('select-manga-chapter-to-remove').value;
+            if (mangaId && chapterId) {
+                if (confirm('Are you sure you want to remove this chapter and all its pages?')) {
+                    const manga = mangas.find(m => m.id === mangaId);
+                    if (manga) {
+                        manga.chapters = manga.chapters.filter(chapter => chapter.id !== chapterId);
+                        saveAndReload();
+                        alert('Chapter removed successfully!');
+                    }
+                }
+            } else {
+                alert('Please select a manga and a chapter to remove.');
+            }
+        };
+
+        document.getElementById('remove-manga-page-btn').onclick = () => {
+            const mangaId = document.getElementById('select-manga-for-page-removal').value;
+            const chapterId = document.getElementById('select-manga-chapter-for-page-removal').value;
+            const pageUrl = document.getElementById('select-manga-page-to-remove').value;
+            if (mangaId && chapterId && pageUrl) {
+                if (confirm('Are you sure you want to remove this page/PDF?')) {
+                    const manga = mangas.find(m => m.id === mangaId);
+                    if (manga) {
+                        const chapter = manga.chapters.find(c => c.id === chapterId);
+                        if (chapter) {
+                            chapter.pages = chapter.pages.filter(page => page !== pageUrl);
+                            saveAndReload();
+                            alert('Page/PDF removed successfully!');
+                        }
+                    }
+                }
+            } else {
+                alert('Please select a manga, chapter, and page/PDF to remove.');
+            }
+        };
+
+        document.getElementById('remove-manhwa-btn').onclick = () => {
+            const manhwaId = document.getElementById('select-manhwa-to-remove').value;
+            if (manhwaId) {
+                if (confirm('Are you sure you want to remove this manhwa and all its chapters/pages?')) {
+                    manhwas = manhwas.filter(manhwa => manhwa.id !== manhwaId);
+                    saveAndReload();
+                    alert('Manhwa removed successfully!');
+                }
+            } else {
+                alert('Please select a manhwa to remove.');
+            }
+        };
+
+        document.getElementById('remove-manhwa-chapter-btn').onclick = () => {
+            const manhwaId = document.getElementById('select-manhwa-for-chapter-removal').value;
+            const chapterId = document.getElementById('select-manhwa-chapter-to-remove').value;
+            if (manhwaId && chapterId) {
+                if (confirm('Are you sure you want to remove this chapter and all its pages?')) {
+                    const manhwa = manhwas.find(m => m.id === manhwaId);
+                    if (manhwa) {
+                        manhwa.chapters = manhwa.chapters.filter(chapter => chapter.id !== chapterId);
+                        saveAndReload();
+                        alert('Chapter removed successfully!');
+                    }
+                }
+            } else {
+                alert('Please select a manhwa and a chapter to remove.');
+            }
+        };
+
+        document.getElementById('remove-manhwa-page-btn').onclick = () => {
+            const manhwaId = document.getElementById('select-manhwa-for-page-removal').value;
+            const chapterId = document.getElementById('select-manhwa-chapter-for-page-removal').value;
+            const pageUrl = document.getElementById('select-manhwa-page-to-remove').value;
+            if (manhwaId && chapterId && pageUrl) {
+                if (confirm('Are you sure you want to remove this page/PDF?')) {
+                    const manhwa = manhwas.find(m => m.id === manhwaId);
+                    if (manhwa) {
+                        const chapter = manhwa.chapters.find(c => c.id === chapterId);
+                        if (chapter) {
+                            chapter.pages = chapter.pages.filter(page => page !== pageUrl);
+                            saveAndReload();
+                            alert('Page/PDF removed successfully!');
+                        }
+                    }
+                }
+            } else {
+                alert('Please select a manhwa, chapter, and page/PDF to remove.');
+            }
+        };
+
+        document.getElementById('remove-movie-btn').onclick = () => {
+            const movieId = document.getElementById('select-movie-to-remove').value;
+            if (movieId) {
+                if (confirm('Are you sure you want to remove this movie and all its videos?')) {
+                    movies = movies.filter(movie => movie.id !== movieId);
+                    saveAndReload();
+                    alert('Movie removed successfully!');
+                }
+            } else {
+                alert('Please select a movie to remove.');
+            }
+        };
+
+        document.getElementById('remove-movie-video-btn').onclick = () => {
+            const movieId = document.getElementById('select-movie-for-video-removal').value;
+            const videoUrl = document.getElementById('select-movie-video-to-remove').value;
+            if (movieId && videoUrl) {
+                if (confirm('Are you sure you want to remove this movie video?')) {
+                    const movie = movies.find(m => m.id === movieId);
+                    if (movie) {
+                        movie.videos = movie.videos.filter(video => video !== videoUrl);
+                        saveAndReload();
+                        alert('Movie video removed successfully!');
+                    }
+                }
+            } else {
+                alert('Please select a movie and a video to remove.');
+            }
+        };
+
 
         function saveAndReload() {
             localStorage.setItem('animes', JSON.stringify(animes));
@@ -1052,7 +1538,7 @@
             loadMangas();
             loadManhwas();
             loadMovies();
-            loadAdminLists(); // Reload admin lists to reflect new additions
+            loadAdminLists(); // Reload admin lists to reflect new additions/removals
         }
 
         // Initial loads
